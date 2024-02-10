@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}|| Complaint{% endblock title %}
+{% block extraCss %}
+<style>
+    body{
+        background:url("{% static 'image/a2.png' %}");
+        background-size:cover;
+        min-height:100vh;
+    }
+    footer{
+        color:white
+    }
+</style>
+{% endblock extraCss %}
+{% block content %}
+<section class="contribute mt-1">
+    {% comment %} <div class="heading text-center h2 ">
+        <strong> Want to Contribute Us?</strong>
+    </div> {% endcomment %}
+    <center>
+      <form action=" {% url "add_complaint" %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+            <div class="formImage mb-4">
+                <h2>Raise a Complaint</h2>
+            </div>
+            <input placeholder="Date of Violation" class="textbox-n" name="vdate" id="vdate" type="text"
+                onfocus="(this.type='date')" onblur="(this.type='text')" id="vdate" /> <br>
+            <input type="text" placeholder="Enter The Place of Violation" name="place"> <br>
+            <input type="text" placeholder="Enter The District" name="district"> <br>
+            <input type="text" placeholder="Enter The State" name="state"> <br>
+
+            <input type="text" name="evidence" id="evidence" accept="video/mp4" placeholder="Provide The Video Evidence" onfocus="(this.type='file')" required>
+
+            <textarea name="comment" id="comment" cols="30" rows="3" placeholder="Any comments"></textarea> <br>
+
+            <input type="submit" value="Submit">
+        </form> 
+        <!-- Your HTML template -->
+{% comment %} <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+  </form> {% endcomment %}
+  
+    </center>
+</section>
+{% endblock content %}

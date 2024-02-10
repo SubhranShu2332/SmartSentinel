@@ -1,0 +1,299 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.index .video img{
+    
+    margin-top: -50px;
+}
+.index .video h1{
+    color:white;
+}
+.index img{
+    width:250px;
+}
+
+*{
+    
+    /* font-family:Times, serif;*/
+    font-family: 'Nunito','Nunito Sans', sans-serif;
+    font-family: 'Lora'
+    /* ProximaNova,arial,Helvetica Neue,sans-serif */
+}
+nav .nav-item{
+    font-size: 20px;
+}
+
+.one{
+    /* font-size: 76px ; */
+    z-index: 0;
+}
+
+    .tw{
+        position: relative;
+        z-index: 2;
+        /* height:70px; */
+        background: url('./bg.jpg');
+        margin-top: -60px;
+        margin-bottom:30px;
+    }
+
+
+/* 
+.first
+{
+
+    background-color:rgba(0, 0, 0, 0.95);
+    background-size: cover;
+    height: auto;
+    
+} */
+/* .first h1{
+    padding: 10rem 8rem;
+    color: aliceblue;
+    font-size: 3rem;
+} */
+.first img{
+    margin-top: 50px;
+}
+
+
+
+nav{
+    background-color: transparent;
+    border: none;
+    /* position: fixed; */
+}
+.navi{
+    background:linear-gradient(to right,white,rgb(240, 238, 255));
+    background: rgb(255, 255, 255);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    /* backdrop-filter: blur( 4px ); */
+    /* -webkit-backdrop-filter: blur( 4px ); */
+    /* filter:blur(10px); */
+    /* border-radius: 10px; */
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+}
+.navbar1{
+    width: 100%;
+}
+nav a{
+    color: rgb(0, 0, 0)!important;
+    
+}
+  
+
+  *{
+    /* font-family:Georgia, 'Times New Roman', Times, serif;
+    font-family: 'Nunito Sans', sans-serif; */
+    /* font-family: ; */
+    /* font-family: 'Playfair Display', serif; */
+
+
+  }
+  
+.collapse ul{
+    font-size: 20px;
+    font-weight: 400;
+}
+.navbar i{
+    margin:3px
+}
+
+video{
+    height:650px;
+    
+}
+
+/* Complaint */
+.contribute form{
+    margin-top: 70px;
+    width:500px;
+    /* background-color:#d3d3d3; */
+    /* background-color: grey; */
+    padding-top: 20px;
+    border-radius: 6px;
+    border: 1px solid rgb(178, 178, 178);
+    padding-bottom: 35px;
+    background: rgba( 255, 255, 255, 0.25 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 3.5px );
+-webkit-backdrop-filter: blur( 3.5px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+  }
+  
+
+  
+  .contribute input{
+    width:320px;
+    height: 45px;
+    border-radius: 6px;
+    padding: 3px 10px;
+    margin-bottom: 10px;
+    border: 1px solid rgb(178, 178, 178);
+    /* margin-top: 10px; */
+  
+  }
+  
+  .contribute textarea{
+    width:320px;
+    border-radius: 7px;
+    padding: 3px 10px;
+    margin-bottom: 30px;
+    border: 1px solid rgb(178, 178, 178);
+  }
+
+/* Complaints */
+
+.complaint{
+    border-bottom: 1.5px dotted grey;
+    margin-bottom: 8px;   
+}
+
+.complaints{
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid rgb(158, 157, 157);
+    
+}
+
+.status span{
+    margin-left:157px;
+}
+.complaint_video{
+    height:180px;
+    /* width:100px */
+}
+
+.o_img{
+    width:40vw;
+}
+.cause img{
+    width:28vw;
+    height: 238px;
+}
+.cause .row .col-md-4{
+    padding-left: 10px;
+}
+
+.govt img{
+    width:22vw;
+    height: 238px;
+}
+.govt .row .col-md-4{
+    padding-left: 10px;
+}
+.text-justify{
+    text-align: justify;
+}
+
+.solution img{
+    width:42vw;
+}
+
+.solution .col-md-6 p{
+    font-size: 26px;
+  line-height: 1.3;
+}
+
+/* extra */
+nav a {
+    position: relative;
+    color: #000;
+    text-decoration: none;
+  }
+  
+  nav a:hover {
+    color: #000;
+  }
+  
+  nav a::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+  
+  nav a:hover::before {
+    transform: scaleX(1);
+  }
+  
+  /* added */
+  
+  @media only screen and (max-width:500px)
+  {
+    .video-content{
+        /* width:fit-content !important; */
+        width:100% !important;
+        font-size: 20px !important;
+
+    }
+    .video-content h1{
+        margin-bottom: 30px;
+    }
+    .o_img{
+        width:80vw;
+    }
+    .cause img{
+        width:85vw;
+        height: 238px;
+    }
+    .cause .row{
+        row-gap: 10px;
+    }
+    .govt img{
+        width:85vw;
+        height: 238px;
+    }
+    .govt .row{
+        row-gap: 10px;
+    }
+    .solution img{
+        width:85vw;
+    }
+    
+    .fir{
+      order:1  
+    }
+
+    .solution .col-md-6 .text-justify{
+        /* text-align: center; */
+        font-size: 17px !important;
+    }
+    footer .text-end
+{
+  text-align: center !important;
+}
+.offcanvas{
+    --bs-offcanvas-width: 260px;
+}
+/* *{
+    overflow-x:scroll
+} */
+.contribute form{
+    width:90vw
+}
+.complaint_video{
+    width:77vw;
+}
+.my_btn{
+    position: relative;
+  top: -234px;
+  left: 121px;
+
+}
+  }
+  .my_btn{
+    width:200px;
+
+}
+  

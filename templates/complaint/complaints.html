@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}|| Complaint History{% endblock title %}
+{% block extraCss %}
+<style>
+    body{
+        {% comment %} background:url("{% static 'image/road.jpg' %}"); {% endcomment %}
+        background-size:cover;
+        
+
+    }
+    .my_container{
+        min-height:100vh;
+    }
+    footer{
+        color:white
+    }
+    
+</style>
+{% endblock extraCss %}
+{% block content %}
+<div class="container my_container my-5">
+    <div class="row">  
+        <div class="col-md-10 mx-auto ">
+          <h2 class="p-3">Past Complaints</h2>
+            {% for complaint in complaints %}
+                <div class="card-mb-2">
+                    <div class="card-body complaints">
+                        <div class="row complaint">
+                            <div class="col-md-4">
+                                {% comment %} <img src="{{complaint.uploaded_file.url}}" alt="" width="170px"> {% endcomment %}
+                                {% if complaint.uploaded_file %}
+                                <center>
+                                    <video class="complaint_video" controls>
+                                        <source src="{{complaint.uploaded_file.url}}" type="video/mp4">
+                                        {% comment %} <source src="movie.ogg" type="video/ogg"> {% endcomment %}
+                                      Your browser does not support the video tag.
+                                      </video>
+                                </center>
+                                {% endif %}
+                            </div>
+                            <div class="col-md-8 p-1">
+                                <p class="mb-1">Complaint #{{complaint.id}} | filed on {{complaint.created_at}}</p>
+                                <h4>{{complaint}}
+                                </h4>
+                                 <p class="mb-1"><b>Place : </b>{{complaint.place}}</p>
+                                <p class="mb-1"><b>District : </b>{{complaint.district}}</p> 
+                                <p class="mb-1"><b>State : </b>{{complaint.state}}</p> 
+                                
+                            <p class="mb-1"><b>Status : </b>
+                                <span>Complaint is {{complaint.status}} On {{complaint.updated_at}}</span>
+                                        {% if complaint.status == "Initiated" %}
+                                        <i class="fa-solid fa-hand"></i>
+                                        {% elif complaint.status == "Processed" %}
+                                        <i class="fa-solid fa-gear"></i>
+                                        {% elif complaint.status == "Success" %}
+                                        <i class="fa-solid fa-circle-check" style="color: #63E6BE;"></i>
+                                        {% elif complaint.status == "Reject" %}
+                                        <i class="fa-solid fa-ban" style="color: #ff0000;"></i>
+                                        {% endif %}
+                                </p>
+                            </div> 
+                        </div>
+                        {% if complaint.status == "Initiated" %}
+                        <a href=" {% url "cancel" complaint.id%}" class="btn btn-sm btn-outline-danger rounded-0">Cancel Complaint</a>
+                        {% comment %} {% elif complaint.status == "Delivered" %}
+                                        <a href="" 
+                                        class="btn btn-sm btn-outline-success rounded-0" data-bs-toggle="modal"
+                                         data-bs-target="#feedbackModal" 
+                                         data-food-id="{{complaint.food.id}}" 
+                                         data-food-title="{{complaint.food.title}}"
+                                         onclick="setfoodDetails(event)">Feedback</a>  {% endcomment %}
+                        {% endif %}
+                        <a href="mailto:whiteunicorn1947@gmail.com" class="btn btn-sm btn-outline-warning rounded-0">Help</a>
+                        {% comment %} <p class="mb-1 ms-auto"><b>Price :</b>{{complaint.price}}</p> {% endcomment %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+ 
+{% endblock content %}
+
+{% block extrajs %}
+<script>
+    function setfoodDetails(e)
+    {
+        let foodId=e.target.dataset.foodId
+        let foodTitle=e.target.dataset.foodTitle
+        document.getElementById("foodTitle").innerHTML=foodTitle
+        document.getElementById("foodId").value=foodId
+    } 
+</script>
+{% endblock extrajs %}
